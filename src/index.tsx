@@ -72,7 +72,14 @@ console.log(`Starting BrowseFreely server on port ${PORT}...`);
 // Background init of adblocker
 getAdblocker().catch(console.error)
 
-export default {
-  port: PORT,
-  fetch: app.fetch,
+// Instead of export default, manually start the server to catch port errors explicitly in PM2
+try {
+  Bun.serve({
+    port: PORT,
+    fetch: app.fetch,
+  });
+  console.log(`✅ Server successfully bound to port ${PORT} and is listening!`);
+} catch (e) {
+  console.error(`❌ FATAL: Could not bind to port ${PORT}. Is it already in use?`, e);
+  process.exit(1);
 }
