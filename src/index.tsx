@@ -67,10 +67,12 @@ app.get('*', (c) => {
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
+console.log(`Starting BrowseFreely server on port ${PORT}...`);
+
+// Background init of adblocker
+getAdblocker().catch(console.error)
+
 export default {
   port: PORT,
   fetch: app.fetch,
 }
-
-// Background init of adblocker
-getAdblocker().catch(console.error)
