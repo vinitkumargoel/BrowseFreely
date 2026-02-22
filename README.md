@@ -37,7 +37,7 @@ docker-compose up -d
 
 ### Option 2: Using Docker Run
 ```bash
-docker run -d -p 3000:3000 --name browsefreely --restart unless-stopped vinitkumargoel/browsefreely:latest
+docker run -d -p 3000:3000 -e RATE_LIMIT=100 --name browsefreely --restart unless-stopped vinitkumargoel/browsefreely:latest
 ```
 
 Navigate to `http://localhost:3000` and start browsing!
@@ -60,17 +60,30 @@ curl -fsSL https://bun.sh/install | bash
    cd BrowseFreely
    ```
 
-2. Install dependencies:
+2. Copy the environment file and adjust if necessary:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Install dependencies:
    ```bash
    bun install
    ```
 
-3. Start the development server:
+4. Start the development server:
    ```bash
    bun run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:3000`.
+5. Open your browser and navigate to `http://localhost:3000`.
+
+## ⚙️ Configuration (Environment Variables)
+
+You can configure BrowseFreely by creating a `.env` file or passing environment variables in Docker/PM2:
+
+* `PORT` - The port the proxy server listens on (Default: `3000`)
+* `NODE_ENV` - Set to `production` for optimized performance
+* `RATE_LIMIT` - Max requests per minute per IP address (Default: `100`)
 
 ## 🚀 Production Native Deployment
 

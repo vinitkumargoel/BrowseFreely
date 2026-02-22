@@ -6,7 +6,8 @@ module.exports = {
       interpreter: "bun",
       env: {
         NODE_ENV: "production",
-        PORT: 3065
+        PORT: 3065,
+        RATE_LIMIT: 100
       },
     },
   ],
