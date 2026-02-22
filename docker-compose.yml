@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  browsefreely:
+    build: .
+    image: vinitkumargoel/browsefreely:latest
+    container_name: browsefreely
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped

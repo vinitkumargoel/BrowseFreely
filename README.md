@@ -25,7 +25,24 @@ A fast, modern, and lightweight web proxy/browser built with **Bun**, **Hono**, 
 - **Adblocker**: `@ghostery/adblocker`
 - **Language**: TypeScript
 
-## 📦 Installation & Setup
+## 🐳 Docker Deployment (Recommended)
+
+You can run BrowseFreely instantly using Docker.
+
+### Option 1: Using Docker Compose
+Simply download the `docker-compose.yml` file from this repository and run:
+```bash
+docker-compose up -d
+```
+
+### Option 2: Using Docker Run
+```bash
+docker run -d -p 3000:3000 --name browsefreely --restart unless-stopped vinitkumargoel/browsefreely:latest
+```
+
+Navigate to `http://localhost:3000` and start browsing!
+
+## 📦 Native Installation & Setup
 
 ### Prerequisites
 You need to have [Bun](https://bun.sh/) installed on your machine.
@@ -39,8 +56,8 @@ curl -fsSL https://bun.sh/install | bash
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/browsefreely.git
-   cd browsefreely
+   git clone https://github.com/vinitkumargoel/BrowseFreely.git
+   cd BrowseFreely
    ```
 
 2. Install dependencies:
@@ -55,7 +72,7 @@ curl -fsSL https://bun.sh/install | bash
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
-## 🚀 Production Deployment
+## 🚀 Production Native Deployment
 
 BrowseFreely includes configuration for deploying with [PM2](https://pm2.keymetrics.io/).
 
