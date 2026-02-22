@@ -1,0 +1,40 @@
+{
+  "name": "browsefreely",
+  "version": "1.0.0",
+  "description": "A fast, modern, and lightweight web proxy built with Bun, Hono, and JSX.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "dev": "bun run --watch src/index.tsx",
+    "start": "bun run src/index.tsx",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop browsefreely",
+    "pm2:logs": "pm2 logs browsefreely"
+  },
+  "dependencies": {
+    "@ghostery/adblocker": "^2.14.1",
+    "hono": "^4.0.0",
+    "lru-cache": "^11.2.6"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bun",
+    "hono",
+    "proxy",
+    "web-proxy",
+    "adblock",
+    "privacy",
+    "jsx"
+  ],
+  "author": "Open Source Contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/browsefreely.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/browsefreely/issues"
+  },
+  "homepage": "https://github.com/yourusername/browsefreely#readme"
+}
